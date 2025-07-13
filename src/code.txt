@@ -1,0 +1,40 @@
+// <Router>
+    //   <div className='min h-screen bg-gray-100'>
+    //     <header className='flex justify-between items-center p-4 bg-gray-800 text-white'>
+    //       <Navbar/>
+    //       <LoginForm onLogin={handleLogin}/>
+    //     </header>
+    //     <main className='p-8 bg-linear-to-t from-sky-500 to-indigo-500 w-full h-full'>
+    //     <div className='flex mt-10 space-x-6'>
+    //       {/* InfoSection and Todolist */}
+    //       <div className ="w-[43%] flex flex-col space-y-6">
+    //          <InfoSection />
+    //          {username === "apar" && password === "apar" && (
+    //           <div className='bg-white rounded shadow p-4'>
+    //           <h2 className='text-lg font-semibold mb-2'>TodoList</h2>
+    //           {/* Placeholder for Todo List */}
+    //           <ul className='list-disc pl-5'>
+    //             <li>Task 1</li>
+    //             <li>Task 2</li>
+    //           </ul>  
+    //          </div>
+    //          )}
+             
+    //       </div>
+    //       {/*  Access Cloud Link */}
+    //       {username === "apar" && password === "apar" && (
+    //         <div className='w-[14%] flex flex-col justify-center items-center space-y-4'>
+    //         <Link to="/cloud" className='bg-white rounded shadow text-blue-500 hover:underline'>
+    //           Access Cloud
+    //         </Link>
+    //       </div>
+    //       )}
+          
+    //       <div className='w-[43%] '>
+    //         <MusicPlayer />
+    //       </div>
+    //     </div>
+        
+    //   </main>
+    //   </div>
+    // </Router> 
