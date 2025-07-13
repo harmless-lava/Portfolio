@@ -1,8 +1,4 @@
-import { img } from "motion/react-client";
 import { useEffect, useRef} from "react"
-import React from 'react'
-// @ts-ignore
-// import { SoundCloud} from "react-soundcloud-widget"
 
 declare global {
     interface Window {
@@ -30,17 +26,17 @@ const SoundCloud =() => {
         });
         widget.setVolume(50)
         },[])
-        const params = new URLSearchParams({
-        auto_play: "false",
-        color: "#ff5500",
-        buying: "false",
-        sharing: "false",
-        download: "false",
-        show_artwork: "true",
-        show_playcount: "false",
-        show_user: "true",
-        single_active: "true",
-        });
+        // const params = new URLSearchParams({
+        // auto_play: "false",
+        // color: "#ff5500",
+        // buying: "false",
+        // sharing: "false",
+        // download: "false",
+        // show_artwork: "true",
+        // show_playcount: "false",
+        // show_user: "true",
+        // single_active: "true",
+        // });
 
         const src = `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/509536188&&auto_play=false&hide_related=false&show_comments=true&show_user=false&show_reposts=false&show_teaser=false"`;
 

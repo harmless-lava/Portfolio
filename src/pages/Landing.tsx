@@ -1,4 +1,3 @@
-import React from 'react'
 import { useCallback, useEffect, useState} from 'react'
 import Name from "../components/Landing/Intro/Name"
 import Tagline from "../components/Landing/Intro/Tagline"

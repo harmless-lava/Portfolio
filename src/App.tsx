@@ -12,6 +12,10 @@ const Home = () => (
     <Suspense fallback={<div className='bg-black w-screen h-screen'></div>}>
     </Suspense>
     <Landing />
+    <About />
+    <FindMe />
+    <Contact />
+    <Ascii />
   </div>
 )
 
@@ -23,11 +27,8 @@ const App: React.FC = () => {
       element: (
         <Suspense fallback={<div className='bg-black w-screen h-screen'></div>}>
           <Navbar />
-          <Landing />
-          <About />
-          <FindMe />
-          <Contact />
-          <Ascii />
+          <Home />
+          
         </Suspense>
       )
     }

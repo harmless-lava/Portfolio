@@ -1,5 +1,3 @@
-import { div } from "motion/react-client";
-
 export interface codeLineI {
     line: string
     number:number
