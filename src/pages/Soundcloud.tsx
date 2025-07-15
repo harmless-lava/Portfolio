@@ -9,6 +9,7 @@ declare global {
 const SoundCloud =() => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
     useEffect(()=>{
+        if (!Window.SC) return;
         if (!iframeRef.current) return;
         const widget = window.SC.Widget(iframeRef.current);
 
