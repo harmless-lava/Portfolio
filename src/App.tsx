@@ -24,7 +24,7 @@ const App: React.FC = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (
+      element: (  
         <Suspense fallback={<div className='bg-black w-screen h-screen'></div>}>
           <Navbar />
           <Home />

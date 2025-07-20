@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { useScrollStore } from "../../../store/refs/useRefToScroll"
 import { DesktopLinks } from "./Links/Links"
 import Logo from "../../Logos/Spiderman"
+import LanguageButton from "../../LanguageButton"
 
 
 const Navbar = () => {
@@ -9,6 +10,7 @@ const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen]= useState(false)
     const scrollToSection = useScrollStore.getState().scrollToSection
     const sectionRefs = useScrollStore.getState().sectionRefs
+    
 
     useEffect(() => {
         if (isMobileMenuOpen) {
@@ -67,10 +69,13 @@ const Navbar = () => {
                         About
                     </div>
                     <div className="text-white hover:text-gray-400 transition duration-300" onClick={(e)=> handleClick(e,()=>scrollToSection(sectionRefs.contact))}>
-                        contact
+                        Contact
                     </div>
+                    
                 </div>
             )}
+
+
         </>
     )
 
