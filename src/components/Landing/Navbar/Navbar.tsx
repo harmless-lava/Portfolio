@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react"
 import { useScrollStore } from "../../../store/refs/useRefToScroll"
 import { DesktopLinks } from "./Links/Links"
 import Logo from "../../Logos/Spiderman"
-import LanguageButton from "../../LanguageButton"
 import { useLanguage } from "../../../LanguageContext"
 
 

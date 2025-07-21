@@ -1,4 +1,3 @@
-import React from 'react'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import { useLanguage } from '../LanguageContext'
@@ -6,7 +5,7 @@ type Language = 'Deutsch' | 'English'
 
 const LanguageButton = () => {
     const {language, setLanguage} = useLanguage()
-    const updateLanguage = ( event: React.MouseEvent<HTMLElement>, newLanguage: Language | null) => {
+    const updateLanguage = ( _: React.MouseEvent<HTMLElement>, newLanguage: Language | null) => {
         if (newLanguage !== null) {
             setLanguage(newLanguage)
         }
