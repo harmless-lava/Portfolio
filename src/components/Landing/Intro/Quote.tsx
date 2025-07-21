@@ -1,10 +1,12 @@
 import {motion} from "motion/react"
+import { useLanguage } from "../../../LanguageContext";
 
 interface QuotePropI {
     scrolled: boolean;
 }
 
 const Quote = ({ scrolled}: QuotePropI) => {
+    const {language} = useLanguage()
     const textVariants = {
         hidden: { opacity: 0, y: 20 },
         show: {
@@ -18,13 +20,20 @@ const Quote = ({ scrolled}: QuotePropI) => {
 
     return (
         <motion.div className="row-start-12 col-start-2 col-end-7 row-end-14 flex flex-col justify-between">
-            <motion.span 
+            {/* <motion.span 
                 variants={textVariants}
                 className="text-[4.5vw] sm:text-[4vw] md:text-[2.5vw] lg:text-[max(1.8vw,1.8rem)]"
                 initial="hidden"
                 animate={scrolled ? "show" : "hidden"}>
                     "Luck favors the bold"
 
+            </motion.span> */}
+            <motion.span 
+                variants={textVariants}
+                className="text-[4.5vw] sm:text-[4vw] md:text-[2.5vw] lg:text-[max(1.8vw,1.8rem)]"
+                initial="hidden"
+                animate={scrolled ? "show" : "hidden"}>
+                {language === 'Deutsch'? 'Das Glück begünstigt den Mutigen':'Luck favors the bold'}                    
             </motion.span>
 
         </motion.div>

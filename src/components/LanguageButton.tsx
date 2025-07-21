@@ -1,33 +1,35 @@
 import React from 'react'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
-import { useContext } from 'react'
+import { useLanguage } from '../LanguageContext'
+type Language = 'Deutsch' | 'English'
 
 const LanguageButton = () => {
-    const [alignment, setAlignment] = React.useState<string | null>('de')
-    
-    const handleChange = (
-        event: React.MouseEvent<HTMLElement>,
-        newAlignment: string | null,
-    ) => {
-        setAlignment(newAlignment)
+    const {language, setLanguage} = useLanguage()
+    const updateLanguage = ( event: React.MouseEvent<HTMLElement>, newLanguage: Language | null) => {
+        if (newLanguage !== null) {
+            setLanguage(newLanguage)
+        }
     }
+    console.log(language)
   return (
     <>
-        <h1>*********</h1>
+        {/* <h1>**********************************************************</h1>
+        <h1>{ language === 'Deutsch' ? 'Sprache : Deutsch ' : 'Language : English'}</h1>
+        <h1>**********************************************************</h1> */}
+
         <ToggleButtonGroup
-            color="primary"
-            value={alignment}
-            exclusive
-            onChange={handleChange}
-            aria-label="Platform">
-            <ToggleButton value="en" sx={{ bgcolor: 'grey.200', borderRadius: 2, px: 2, py: 1 }}>
+        color="primary"
+        value={language}
+        exclusive
+        onChange={updateLanguage}
+        aria-label="Platform">
+            <ToggleButton value="English"  sx={{ bgcolor: 'grey.200', borderRadius: 2, px: 2, py: 1 }}>
                 EN
             </ToggleButton>
-            <ToggleButton value="de" sx={{ bgcolor: 'grey.200', borderRadius: 2, px: 2, py: 1 }}>
+            <ToggleButton value="Deutsch"  sx={{ bgcolor: 'grey.200', borderRadius: 2, px: 2, py: 1 }}>
                 DE
             </ToggleButton>
-
         </ToggleButtonGroup>
     </>
   ) 

@@ -2,6 +2,7 @@ import type { FormDataI } from "../../../pages/Form";
 
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { motion } from "motion/react";
+import { useLanguage } from "../../../LanguageContext";
 
 interface FormPage3Props {
   formData: { name: string; email: string; message: string; interest: string };
@@ -22,6 +23,7 @@ export const FormPage3 = ({
   setStep,
   setSending,
 }: FormPage3Props) => {
+  const {language} = useLanguage()
   const [isHovering, setIsHovering] = useState(false);
   const [localIsValid, setLocalIsValid] = useState(isValid);
 
@@ -48,7 +50,7 @@ export const FormPage3 = ({
       setSending(true);
 
       const formDataI = new FormData();
-      formDataI.append("access_key", "22bb481d-17a1-43bf-b247-8eb32ffde122");
+      formDataI.append("access_key", "f1e587c2-95a3-4d9a-892b-84cc01b60991");
       formDataI.append("name", formData.name);
       formDataI.append("email", formData.email);
       formDataI.append("interest", formData.interest);
@@ -86,7 +88,8 @@ export const FormPage3 = ({
       onSubmit={(e) => onSubmit(e)}
       className="p-6 rounded-lg w-full text-center flex flex-col items-center"
     >
-      Your message:
+      {language==='Deutsch' ? 'Ihre Nachricht' : 'Your message'}
+      {/* Your message: */}
       <input
         className={`outline-none mx-4 px-2 border-b-2 ${
           isValid.message ? "focus:border-gray-600" : "border-red-500"

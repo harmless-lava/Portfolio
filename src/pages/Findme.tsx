@@ -4,6 +4,7 @@ import Profiles from "../components/Contact/Profiles";
 import { GithubLogo } from "../components/Contact/GithubLogo";
 import EmailLogo from "../components/Contact/EmailLogo";
 import LinkedInLogo from "../components/Contact/LinkedInLogo";
+import { useLanguage } from "../LanguageContext";
 
 export interface ProfileI {
     logo: ReactElement;
@@ -12,6 +13,7 @@ export interface ProfileI {
 }
 
 const FindMe = () => {
+    const {language} = useLanguage()
     const contactRef = useScrollStore().sectionRefs.contact
     const MyProfiles: ProfileI[] = [
         {
@@ -32,7 +34,7 @@ const FindMe = () => {
     ]
     return (
         <div className="bg-black text-white grid grid-cols-7 selection:text-black selection:bg-white gap-0 space-y-12 py-20">
-            <h1 className="row-start-1 col-start-2 col-end-7 text-3xl" ref={contactRef}>Find me here</h1>
+            <h1 className="row-start-1 col-start-2 col-end-7 text-3xl" ref={contactRef}>{language==='Deutsch' ?' Sie könnten mich durch die Links erreichen' : 'Find me here'}</h1>
             <div className="col-start-2 col-end-7 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {MyProfiles.map((profile, index) => (
                     <Profiles key={index} profile={profile} index={index}/>

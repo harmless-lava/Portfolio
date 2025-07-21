@@ -3,9 +3,11 @@ import { useScrollStore } from "../../../store/refs/useRefToScroll"
 import { DesktopLinks } from "./Links/Links"
 import Logo from "../../Logos/Spiderman"
 import LanguageButton from "../../LanguageButton"
+import { useLanguage } from "../../../LanguageContext"
 
 
 const Navbar = () => {
+    const {language} = useLanguage()
     const navbarRef = useRef(null)
     const [isMobileMenuOpen, setIsMobileMenuOpen]= useState(false)
     const scrollToSection = useScrollStore.getState().scrollToSection
@@ -43,10 +45,10 @@ const Navbar = () => {
                 <div className="mx-auto flex justify-between items-center">
                     <Logo />
                 <nav className="hidden md:flex space-x-6">
-                    <DesktopLinks onClick={() => scrollToSection(sectionRefs.home)} page="Home" />
-                    <DesktopLinks onClick={() => scrollToSection(sectionRefs.about)} page="About" />
+                    <DesktopLinks onClick={() => scrollToSection(sectionRefs.home)} page={language==='Deutsch' ? "Überblick":"Home"} />
+                    <DesktopLinks onClick={() => scrollToSection(sectionRefs.about)} page={language==='Deutsch' ? "über mich" : "About"} />
                     {/* <DesktopLinks onClick={() => scrollToSection(sectionRefs.project)} page="Projects" /> */}
-                    <DesktopLinks onClick={() => scrollToSection(sectionRefs.contact)} page="Contact" />
+                    <DesktopLinks onClick={() => scrollToSection(sectionRefs.contact)} page={language==='Deutsch' ?"Kontakt":"Contact"} />
                 </nav>
                 <button className="border-gray-400 border-1 py-1 px-2 md:hidden" onClick={toggleMobileMenu}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" className="w-8 h-6">
