@@ -45,7 +45,7 @@ const Navbar = () => {
                     <Logo />
                 <nav className="hidden md:flex space-x-6">
                     <DesktopLinks onClick={() => scrollToSection(sectionRefs.home)} page={language==='Deutsch' ? "Überblick":"Home"} />
-                    <DesktopLinks onClick={() => scrollToSection(sectionRefs.about)} page={language==='Deutsch' ? "über mich" : "About"} />
+                    <DesktopLinks onClick={() => scrollToSection(sectionRefs.about)} page={language==='Deutsch' ? "Profil" : "About"} />
                     {/* <DesktopLinks onClick={() => scrollToSection(sectionRefs.project)} page="Projects" /> */}
                     <DesktopLinks onClick={() => scrollToSection(sectionRefs.contact)} page={language==='Deutsch' ?"Kontakt":"Contact"} />
                 </nav>

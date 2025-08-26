@@ -3,11 +3,22 @@ import Name from "../components/Landing/Intro/Name"
 import Tagline from "../components/Landing/Intro/Tagline"
 import Photo from "../components/Landing/Intro/Photo"
 import Quote from "../components/Landing/Intro/Quote"
+import { useLanguage } from '../LanguageContext'
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const phrases = ["CODING","PHYSICS","MATHS","TECH","LANGUAGES"]
+// const phrases =
+//   language === "Deutsch"
+//     ? ["PROGRAMMIEREN", "PHYSIK", "MATHEMATIK", "TECH", "SPRACHEN"]
+//     : ["CODING", "PHYSICS", "MATHS", "TECH", "LANGUAGES"];
+
+
 
 const Landing = () => {
+  const {language} = useLanguage()
+  const phrases =
+  language === "Deutsch"
+    ? ["PROGRAMMIEREN", "PHYSIK", "MATHEMATIK", "TECH", "SPRACHEN"]
+    : ["CODING", "PHYSICS", "MATHS", "TECH", "LANGUAGES"];
   const [likeTo, setLikeTo]= useState<string>("")
   const [targetString, setTargetString] = useState<string>("LEARNING")
   const [iterations, setIterations]= useState<number>(0)

@@ -98,7 +98,7 @@ const About = () => {
     },
     {
       line: `       { '09.2023- 09.2024': 'Thapathali Campus of Institue of Engineering, Nepal - Bsc Automobile Engineering 
-                                        //hat ein Stipendium bekommen, aber das Studium abgebrochen um Abenturen in Deutschland zu folgen'},`,
+                                        //hat ein Stipendium bekommen, aber das Studium abgebrochen um Abenteuer in Deutschland zu folgen'},`,
       number: 14,
     },
     {
