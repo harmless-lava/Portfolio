@@ -1,4 +1,5 @@
 import { useEffect, useRef} from "react"
+import LanguageButton from "../components/LanguageButton";
 
 declare global {
     interface Window {
@@ -9,6 +10,7 @@ declare global {
 const SoundCloud =() => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
     useEffect(()=>{
+
         if (!iframeRef.current) return;
         const widget = window.SC.Widget(iframeRef.current);
 
@@ -52,6 +54,8 @@ const SoundCloud =() => {
                 color="#323232"
                 
             ></iframe>
+            <LanguageButton />
+
             <svg  version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             height="460.44444444444444"
